@@ -1,0 +1,55 @@
+{
+  "name": "project-audit-config",
+  "version": "1.1.0",
+  "stack": "vue3+typescript+antdv",
+  "scopeDefaults": {
+    "viewRoot": "src/views",
+    "componentRoot": "src/components",
+    "composableRoot": "src/hooks",
+    "serviceRoot": "src/service",
+    "typesRoot": "src/types"
+  },
+  "thresholds": {
+    "maxViewLines": 300,
+    "maxModalLines": 250,
+    "samePatternMinCountForAbstraction": 2
+  },
+  "forbidPatterns": [
+    "composable-direct-ui-message",
+    "record-string-any",
+    "magic-number-status"
+  ],
+  "workflow": {
+    "requireOptimizationBacklogFile": true,
+    "optimizationBacklogDefaultPath": "docs/<branch>/优化清单.md",
+    "requireStepBasedExecution": true
+  },
+  "vueCompliance": {
+    "enabled": true,
+    "referenceSkill": "vue-best-practices",
+    "requiredChecks": [
+      "composition-api-script-setup",
+      "component-boundary-clear",
+      "props-down-events-up",
+      "move-template-logic-to-computed",
+      "reduce-any-and-magic-numbers",
+      "avoid-ui-side-effects-in-composables"
+    ]
+  },
+  "requiredChecks": {
+    "boundaryCheck": true,
+    "reuseCheck": true,
+    "typeSafetyCheck": true,
+    "apiContractCheck": true,
+    "riskCheck": true
+  },
+  "requiredOutputSections": [
+    "audit-scope",
+    "findings-p0-p1-p2",
+    "evidence",
+    "minimal-refactor-plan",
+    "regression-checklist",
+    "optimization-backlog-file",
+    "vue-compliance-check"
+  ]
+}
